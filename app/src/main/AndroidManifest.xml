@@ -7,28 +7,227 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Œuvres de Port-Royal"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sacybe">
         <activity
             android:name="be.sacy.MainActivity"
+            android:label="Œuvres de Port-Royal"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" />
-                <data android:host="*.sacy.be" />
+                <data android:host="www.sacy.be" />
             </intent-filter>
         </activity>
-    </application>
-
-
+        <activity
+            android:name="be.sacy.BibleActivity"
+            android:label="Bible de Port-Royal"
+            android:icon="@mipmap/ic_bible"
+            android:roundIcon="@mipmap/ic_bible_round"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" />
+                <data android:host="bible.sacy.be" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="be.sacy.HeuresActivity"
+            android:label="Heures de Port-Royal"
+            android:icon="@mipmap/ic_heures"
+            android:roundIcon="@mipmap/ic_heures_round"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" />
+                <data android:host="heures.sacy.be" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="be.sacy.BreviaireHiverActivity"
+            android:label="Hiver—Bréviaire"
+            android:icon="@mipmap/ic_hiver"
+            android:roundIcon="@mipmap/ic_hiver_round"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" />
+                <data android:host="breviaire.sacy.be" />
+                <data android:pathPattern="/hiver/*"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="be.sacy.BreviaireAutomneActivity"
+            android:label="Automne—Bréviaire"
+            android:icon="@mipmap/ic_automne"
+            android:roundIcon="@mipmap/ic_automne_round"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" />
+                <data android:host="breviaire.sacy.be" />
+                <data android:pathPattern="/automne/*"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="be.sacy.BreviaireEteActivity"
+            android:label="Été—Bréviaire"
+            android:icon="@mipmap/ic_ete"
+            android:roundIcon="@mipmap/ic_ete_round"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" />
+                <data android:host="breviaire.sacy.be" />
+                <data android:pathPattern="/ete/*"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="be.sacy.BreviairePrintempsActivity"
+            android:label="Printemps—Bréviaire"
+            android:icon="@mipmap/ic_printemps"
+            android:roundIcon="@mipmap/ic_printemps_round"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" />
+                <data android:host="breviaire.sacy.be" />
+                <data android:pathPattern="/printemps/*"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="be.sacy.AnneeChretienneActivity"
+            android:label="L’Année Chrétienne"
+            android:icon="@mipmap/ic_annee_chretienne"
+            android:roundIcon="@mipmap/ic_annee_chretienne_round"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" />
+                <data android:host="missel.sacy.be" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="be.sacy.ConsiderationsActivity"
+            android:label="Considérations de Saint-Cyran"
+            android:icon="@mipmap/ic_considerations"
+            android:roundIcon="@mipmap/ic_considerations_round"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" />
+                <data android:host="considerations.sacy.be" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="be.sacy.ImitationActivity"
+            android:label="Imitation de Jésus-Christ"
+            android:icon="@mipmap/ic_imitation"
+            android:roundIcon="@mipmap/ic_imitation_round"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" />
+                <data android:host="imitation.sacy.be" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="be.sacy.TheologieFamiliereActivity"
+            android:label="Théologie Familière"
+            android:icon="@mipmap/ic_theologie_familiere"
+            android:roundIcon="@mipmap/ic_theologie_familiere_round"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" />
+                <data android:host="theologie-familiere.sacy.be" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="be.sacy.RoyaumontActivity"
+            android:label="Bible de Royaumont"
+            android:icon="@mipmap/ic_royaumont"
+            android:roundIcon="@mipmap/ic_royaumont_round"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" />
+                <data android:host="royaumont.sacy.be" />
+            </intent-filter>
+        </activity>
+</application>
 </manifest>

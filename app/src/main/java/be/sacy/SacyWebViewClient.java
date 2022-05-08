@@ -17,8 +17,6 @@ public class SacyWebViewClient extends WebViewClient {
     public SacyWebViewClient(String domain) {
         urlPattern = Pattern.compile(
                 Pattern.quote("https://")
-                        + ".*"
-                        + Pattern.quote(".")
                         + Pattern.quote(domain)
                         + "($|/.*)"
         );
