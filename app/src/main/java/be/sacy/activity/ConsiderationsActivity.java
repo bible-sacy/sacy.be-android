@@ -1,8 +1,10 @@
-package be.sacy;
+package be.sacy.activity;
 
 import android.os.Bundle;
 
-public class ConsiderationsActivity extends MainActivity {
+import be.sacy.AncestorActivity;
+
+public class ConsiderationsActivity extends AncestorActivity {
 
     protected String domain = "considerations.sacy.be";
 

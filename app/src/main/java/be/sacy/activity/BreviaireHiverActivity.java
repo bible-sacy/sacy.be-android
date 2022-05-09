@@ -1,11 +1,12 @@
-package be.sacy;
+package be.sacy.activity;
 
 import android.os.Bundle;
-import android.webkit.WebView;
 
-public class AnneeChretienneActivity extends MainActivity {
+import be.sacy.AncestorActivity;
 
-    protected String domain = "missel.sacy.be";
+public class BreviaireHiverActivity extends AncestorActivity {
+
+    protected String domain = "breviaire.sacy.be/hiver";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

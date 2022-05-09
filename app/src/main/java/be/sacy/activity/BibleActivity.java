@@ -1,10 +1,12 @@
-package be.sacy;
+package be.sacy.activity;
 
 import android.os.Bundle;
 
-public class TheologieFamiliereActivity extends MainActivity {
+import be.sacy.AncestorActivity;
 
-    protected String domain = "theologie-familiere.sacy.be";
+public class BibleActivity extends AncestorActivity {
+
+    protected String domain = "bible.sacy.be";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

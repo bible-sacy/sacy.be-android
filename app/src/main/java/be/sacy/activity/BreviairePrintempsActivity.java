@@ -1,8 +1,10 @@
-package be.sacy;
+package be.sacy.activity;
 
 import android.os.Bundle;
 
-public class BreviairePrintempsActivity extends MainActivity {
+import be.sacy.AncestorActivity;
+
+public class BreviairePrintempsActivity extends AncestorActivity {
 
     protected String domain = "breviaire.sacy.be/printemps";
 

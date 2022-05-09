@@ -1,6 +1,5 @@
 package be.sacy;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -8,61 +7,35 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
-public class MainActivity extends AppCompatActivity {
+public class AncestorActivity extends AppCompatActivity {
+
+    private static final String TAG = "AncestorActivity";
 
     WebView mWebView;
-    String urlToLoad;
-    protected String domain = "www.sacy.be";
+
+    protected String domain;
 
     protected String getDomain() {
         return this.domain;
     }
 
-    String getUrlToLoad() {
-        return urlToLoad;
-    }
-
-    void setUrlToLoad(String urlToLoad) {
-        this.urlToLoad = urlToLoad;
-    }
-
-    WebView getWebView() {
-        return mWebView;
-    }
-
-    void setWebView(WebView v) {
-        mWebView = v;
-    }
-
     @Override
-    protected void onSaveInstanceState(@NonNull Bundle outState) {
-        outState.putString("url", getWebView().getUrl());
-        super.onSaveInstanceState(outState);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if (getUrlToLoad() != null) {
-            getWebView().loadUrl(getUrlToLoad());
-        }
-    }
-
     @SuppressLint("SetJavaScriptEnabled")
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "onCreate " + this.getLocalClassName());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         try {
             this.getSupportActionBar().hide();
         } catch (NullPointerException ignored){}
 
-        setWebView(findViewById(R.id.webview));
-        WebSettings settings = getWebView().getSettings();
+        mWebView = findViewById(R.id.webview);
+        WebSettings settings = mWebView.getSettings();
         settings.setJavaScriptEnabled(true);
         settings.setDomStorageEnabled(true);
         settings.setAllowFileAccess(false);
@@ -70,15 +43,21 @@ public class MainActivity extends AppCompatActivity {
         settings.setAllowFileAccessFromFileURLs(false);
         settings.setAllowUniversalAccessFromFileURLs(false);
 
-        getWebView().setWebViewClient(new SacyWebViewClient(getDomain()));
+        mWebView.setWebViewClient(new SacyWebViewClient(getDomain()));
+    }
 
-        String savedUrl;
-        if (
-                savedInstanceState != null
-                && (savedUrl = savedInstanceState.getString("url")) != null
-        ) {
-            setUrlToLoad(savedUrl);
-        } else {
+    @Override
+    protected void onStart() {
+        Log.d(TAG, "onStart " + this.getLocalClassName());
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        Log.d(TAG, "onResume "  + this.getLocalClassName());
+        super.onResume();
+        String urlToLoad;
+        {
             final Intent intent = getIntent();
             final String action = intent.getAction();
             final Uri url = intent.getData();
@@ -89,31 +68,44 @@ public class MainActivity extends AppCompatActivity {
                             && url.toString().contains(getDomain())
                             && url.toString().contains("/#/")
             ) {
-                setUrlToLoad(url.toString());
+                urlToLoad = url.toString();
             } else {
-                setUrlToLoad(
+                urlToLoad =
                         this.getPreferences(Context.MODE_PRIVATE)
-                                .getString(getDomain(), "https://" + getDomain())
-                );
+                                .getString(getDomain(), "https://" + getDomain());
             }
         }
+        mWebView.loadUrl(urlToLoad);
     }
 
     @Override
     protected void onPause() {
+        Log.d(TAG, "onPause "  + this.getLocalClassName());
         this.getPreferences(Context.MODE_PRIVATE)
                 .edit()
-                .putString(getDomain(), getWebView().getUrl())
+                .putString(getDomain(), mWebView.getUrl())
                 .apply();
         super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        Log.d(TAG, "onStop "  + this.getLocalClassName());
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.d(TAG, "onDestroy " + this.getLocalClassName());
+        super.onDestroy();
     }
 
     // https://developer.android.com/guide/webapps/webview#NavigatingHistory
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         // Check if the key event was the Back button and if there's history
-        if ((keyCode == KeyEvent.KEYCODE_BACK) && getWebView().canGoBack()) {
-            getWebView().goBack();
+        if ((keyCode == KeyEvent.KEYCODE_BACK) && mWebView.canGoBack()) {
+            mWebView.goBack();
             return true;
         }
         // If it wasn't the Back key or there's no web page history, bubble up to the default
