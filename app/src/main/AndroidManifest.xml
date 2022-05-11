@@ -84,7 +84,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" />
                 <data android:host="breviaire.sacy.be" />
-                <data android:pathPattern="/hiver*"/>
+                <data android:pathPrefix="/hiver"/>
             </intent-filter>
         </activity>
         <activity
@@ -104,7 +104,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" />
                 <data android:host="breviaire.sacy.be" />
-                <data android:pathPattern="/automne*"/>
+                <data android:pathPrefix="/automne"/>
             </intent-filter>
         </activity>
         <activity
@@ -124,7 +124,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" />
                 <data android:host="breviaire.sacy.be" />
-                <data android:pathPattern="/ete*"/>
+                <data android:pathPrefix="/ete"/>
             </intent-filter>
         </activity>
         <activity
@@ -144,7 +144,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" />
                 <data android:host="breviaire.sacy.be" />
-                <data android:pathPattern="/printemps*"/>
+                <data android:pathPrefix="/printemps"/>
             </intent-filter>
         </activity>
         <activity

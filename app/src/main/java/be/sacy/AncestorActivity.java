@@ -75,16 +75,21 @@ public class AncestorActivity extends AppCompatActivity {
                                 .getString(getDomain(), "https://" + getDomain());
             }
         }
+        saveUrl(urlToLoad);
         mWebView.loadUrl(urlToLoad);
+    }
+
+    void saveUrl(String url) {
+        this.getPreferences(Context.MODE_PRIVATE)
+                .edit()
+                .putString(getDomain(), url)
+                .apply();
     }
 
     @Override
     protected void onPause() {
         Log.d(TAG, "onPause "  + this.getLocalClassName());
-        this.getPreferences(Context.MODE_PRIVATE)
-                .edit()
-                .putString(getDomain(), mWebView.getUrl())
-                .apply();
+        saveUrl(mWebView.getUrl());
         super.onPause();
     }
 

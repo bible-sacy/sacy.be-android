@@ -6,11 +6,11 @@ import be.sacy.AncestorActivity;
 
 public class BreviaireEteActivity extends AncestorActivity {
 
-    protected String domain = "breviaire.sacy.be/ete";
+    public static String domain = "breviaire.sacy.be/ete";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.domain = this.domain;
+        super.domain = domain;
         super.onCreate(savedInstanceState);
     }
 }

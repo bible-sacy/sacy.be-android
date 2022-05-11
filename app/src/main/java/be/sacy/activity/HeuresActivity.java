@@ -6,11 +6,11 @@ import be.sacy.AncestorActivity;
 
 public class HeuresActivity extends AncestorActivity {
 
-    protected String domain = "heures.sacy.be";
+    public static String domain = "heures.sacy.be";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.domain = this.domain;
+        super.domain = domain;
         super.onCreate(savedInstanceState);
     }
 }
