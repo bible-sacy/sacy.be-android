@@ -44,7 +44,6 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" />
                 <data android:host="bible.sacy.be" />
-                <data android:pathPrefix="/#/" />
             </intent-filter>
         </activity>
         <activity
@@ -64,7 +63,6 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" />
                 <data android:host="heures.sacy.be" />
-                <data android:pathPrefix="/#/" />
             </intent-filter>
         </activity>
         <activity
@@ -84,7 +82,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" />
                 <data android:host="breviaire.sacy.be" />
-                <data android:pathPrefix="/hiver/#/"/>
+                <data android:pathPrefix="/hiver"/>
             </intent-filter>
         </activity>
         <activity
@@ -104,7 +102,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" />
                 <data android:host="breviaire.sacy.be" />
-                <data android:pathPrefix="/automne/#/"/>
+                <data android:pathPrefix="/automne"/>
             </intent-filter>
         </activity>
         <activity
@@ -124,7 +122,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" />
                 <data android:host="breviaire.sacy.be" />
-                <data android:pathPrefix="/ete/#/"/>
+                <data android:pathPrefix="/ete"/>
             </intent-filter>
         </activity>
         <activity
@@ -144,7 +142,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" />
                 <data android:host="breviaire.sacy.be" />
-                <data android:pathPrefix="/printemps/#/"/>
+                <data android:pathPrefix="/printemps"/>
             </intent-filter>
         </activity>
         <activity
@@ -164,7 +162,6 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" />
                 <data android:host="missel.sacy.be" />
-                <data android:pathPrefix="/#/"/>
             </intent-filter>
         </activity>
         <activity
@@ -184,7 +181,6 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" />
                 <data android:host="considerations.sacy.be" />
-                <data android:pathPrefix="/#/"/>
             </intent-filter>
         </activity>
         <activity
@@ -204,7 +200,6 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" />
                 <data android:host="imitation.sacy.be" />
-                <data android:pathPrefix="/#/"/>
             </intent-filter>
         </activity>
         <activity
@@ -224,7 +219,6 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" />
                 <data android:host="theologie-familiere.sacy.be" />
-                <data android:pathPrefix="/#/"/>
             </intent-filter>
         </activity>
         <activity
@@ -244,7 +238,6 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" />
                 <data android:host="royaumont.sacy.be" />
-                <data android:pathPrefix="/#/"/>
             </intent-filter>
         </activity>
 </application>
