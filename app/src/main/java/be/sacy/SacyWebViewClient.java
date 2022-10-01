@@ -27,6 +27,8 @@ import be.sacy.activity.TheologieFamiliereActivity;
 
 public class SacyWebViewClient extends WebViewClient {
 
+    private static final String PUB_URL_PREFIX = "https://bible.sacy.be/pub/";
+
     Pattern urlPattern;
 
     static HashMap<String, Class<? extends AncestorActivity>> prefixes = new HashMap<>();
@@ -54,25 +56,33 @@ public class SacyWebViewClient extends WebViewClient {
     }
 
     private boolean matchExtUrl(String url) {
-        return !urlPattern.matcher(url).matches() || url.endsWith(".pdf");
+        return url.startsWith(PUB_URL_PREFIX)
+                || url.endsWith(".pdf")
+                || !urlPattern.matcher(url).matches();
     }
 
     void startActivityForUri(Context context, Uri uri) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-        String hostPath = uri.getHost();
-        if (hostPath != null) {
-            String path = uri.getPath();
-            if (path != null) {
-                hostPath += path;
-            }
-            for (String prefix : prefixes.keySet()) {
-                if (hostPath.startsWith(prefix)) {
-                    intent.setClass(context, prefixes.get(prefix));
-                    break;
+        if (uri.toString().endsWith(".pdf")
+            || uri.toString().startsWith(PUB_URL_PREFIX)) {
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            context.startActivity(intent);
+        } else {
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            String hostPath = uri.getHost();
+            if (hostPath != null) {
+                String path = uri.getPath();
+                if (path != null) {
+                    hostPath += path;
+                }
+                for (String prefix : prefixes.keySet()) {
+                    if (hostPath.startsWith(prefix)) {
+                        intent.setClass(context, prefixes.get(prefix));
+                        break;
+                    }
                 }
             }
+            context.startActivity(intent);
         }
-        context.startActivity(intent);
     }
 
     @Override
