@@ -6,7 +6,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Œuvres de Port-Royal"
+        android:label="📚Œuvres de Port-Royal"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sacybe">
@@ -30,7 +30,7 @@
         <activity
             android:name="be.sacy.activity.BibleActivity"
             android:launchMode="singleTask"
-            android:label="Bible de Port-Royal"
+            android:label="📖Bible de Port-Royal"
             android:icon="@mipmap/ic_bible"
             android:roundIcon="@mipmap/ic_bible_round"
             android:exported="true">
@@ -49,7 +49,7 @@
         <activity
             android:name="be.sacy.activity.HeuresActivity"
             android:launchMode="singleTask"
-            android:label="Heures de Port-Royal"
+            android:label="🔔Heures de Port-Royal"
             android:icon="@mipmap/ic_heures"
             android:roundIcon="@mipmap/ic_heures_round"
             android:exported="true">
@@ -68,7 +68,7 @@
         <activity
             android:name="be.sacy.activity.BreviaireHiverActivity"
             android:launchMode="singleTask"
-            android:label="Hiver—Bréviaire"
+            android:label="🙏Hiver Bréviaire"
             android:icon="@mipmap/ic_hiver"
             android:roundIcon="@mipmap/ic_hiver_round"
             android:exported="true">
@@ -86,49 +86,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="be.sacy.activity.BreviaireAutomneActivity"
-            android:launchMode="singleTask"
-            android:label="Automne—Bréviaire"
-            android:icon="@mipmap/ic_automne"
-            android:roundIcon="@mipmap/ic_automne_round"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https" />
-                <data android:host="breviaire.sacy.be" />
-                <data android:pathPrefix="/automne"/>
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="be.sacy.activity.BreviaireEteActivity"
-            android:launchMode="singleTask"
-            android:label="Été—Bréviaire"
-            android:icon="@mipmap/ic_ete"
-            android:roundIcon="@mipmap/ic_ete_round"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https" />
-                <data android:host="breviaire.sacy.be" />
-                <data android:pathPrefix="/ete"/>
-            </intent-filter>
-        </activity>
-        <activity
             android:name="be.sacy.activity.BreviairePrintempsActivity"
             android:launchMode="singleTask"
-            android:label="Printemps—Bréviaire"
+            android:label="🙏Printemps Bréviaire"
             android:icon="@mipmap/ic_printemps"
             android:roundIcon="@mipmap/ic_printemps_round"
             android:exported="true">
@@ -146,9 +106,49 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="be.sacy.activity.BreviaireEteActivity"
+            android:launchMode="singleTask"
+            android:label="🙏Été Bréviaire"
+            android:icon="@mipmap/ic_ete"
+            android:roundIcon="@mipmap/ic_ete_round"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" />
+                <data android:host="breviaire.sacy.be" />
+                <data android:pathPrefix="/ete"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="be.sacy.activity.BreviaireAutomneActivity"
+            android:launchMode="singleTask"
+            android:label="🙏Automne Bréviaire"
+            android:icon="@mipmap/ic_automne"
+            android:roundIcon="@mipmap/ic_automne_round"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" />
+                <data android:host="breviaire.sacy.be" />
+                <data android:pathPrefix="/automne"/>
+            </intent-filter>
+        </activity>
+        <activity
             android:name="be.sacy.activity.AnneeChretienneActivity"
             android:launchMode="singleTask"
-            android:label="L’Année Chrétienne"
+            android:label="📅Année Chrétienne"
             android:icon="@mipmap/ic_annee_chretienne"
             android:roundIcon="@mipmap/ic_annee_chretienne_round"
             android:exported="true">
@@ -167,7 +167,7 @@
         <activity
             android:name="be.sacy.activity.ConsiderationsActivity"
             android:launchMode="singleTask"
-            android:label="Considérations de Saint-Cyran"
+            android:label="📅Considérations de Saint-Cyran"
             android:icon="@mipmap/ic_considerations"
             android:roundIcon="@mipmap/ic_considerations_round"
             android:exported="true">
@@ -186,7 +186,7 @@
         <activity
             android:name="be.sacy.activity.ImitationActivity"
             android:launchMode="singleTask"
-            android:label="Imitation de Jésus-Christ"
+            android:label="✝Imitation de Jésus-Christ"
             android:icon="@mipmap/ic_imitation"
             android:roundIcon="@mipmap/ic_imitation_round"
             android:exported="true">
@@ -205,7 +205,7 @@
         <activity
             android:name="be.sacy.activity.TheologieFamiliereActivity"
             android:launchMode="singleTask"
-            android:label="Théologie Familière"
+            android:label="📕Théologie Familière"
             android:icon="@mipmap/ic_theologie_familiere"
             android:roundIcon="@mipmap/ic_theologie_familiere_round"
             android:exported="true">
@@ -224,7 +224,7 @@
         <activity
             android:name="be.sacy.activity.RoyaumontActivity"
             android:launchMode="singleTask"
-            android:label="Bible de Royaumont"
+            android:label="📖Bible de Royaumont"
             android:icon="@mipmap/ic_royaumont"
             android:roundIcon="@mipmap/ic_royaumont_round"
             android:exported="true">
