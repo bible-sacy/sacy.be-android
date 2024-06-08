@@ -9,12 +9,12 @@ android {
             keyAlias 'key0'
         }
     }
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId 'be.sacy'
         minSdk 22
-        targetSdk 33
+        targetSdk 34
         versionCode 2
         versionName 'Deux'
 
