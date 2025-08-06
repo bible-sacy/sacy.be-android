@@ -86,7 +86,7 @@ public class SacyWebViewClient extends WebViewClient {
     }
 
     @Override
-    @SuppressWarnings("deprecation") // for API < 24
+    // for API < 24
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
         if (matchExtUrl(url)) {
             startActivityForUri(view.getContext(), Uri.parse(url));
